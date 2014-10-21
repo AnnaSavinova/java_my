@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Java2.iml" filepath="$PROJECT_DIR$/Java2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-module/base-module.iml" filepath="$PROJECT_DIR$/base-module/base-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proxy-module/proxy-module.iml" filepath="$PROJECT_DIR$/proxy-module/proxy-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shell-module/shell-module.iml" filepath="$PROJECT_DIR$/shell-module/shell-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/start-module/start-module.iml" filepath="$PROJECT_DIR$/start-module/start-module.iml" />
+    </modules>
+  </component>
+</project>
+
