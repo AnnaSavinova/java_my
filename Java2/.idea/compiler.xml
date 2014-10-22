@@ -24,7 +24,6 @@
         <processorPath useClasspath="true" />
         <module name="base-module" />
         <module name="proxy-module" />
-        <module name="shell" />
         <module name="shell-module" />
         <module name="start-module" />
       </profile>

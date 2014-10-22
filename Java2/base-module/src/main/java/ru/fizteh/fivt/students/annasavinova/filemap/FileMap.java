@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import ru.fizteh.fivt.storage.structured.Storeable;
 import ru.fizteh.fivt.students.annasavinova.filemap.shell.UserShell;
 
+import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
@@ -14,7 +15,7 @@ import java.util.Scanner;
 
 @Component
 public class FileMap extends UserShell {
-    @Value("${ru.fizteh.fivt.students.annasavinova.filemap.path:BBBB}")
+    @Value("${ru.fizteh.fivt.students.annasavinova.filemap.path}")
     private String path;
 
     DBaseProviderFactory factory;
@@ -23,12 +24,13 @@ public class FileMap extends UserShell {
 
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(FileMap.class);
 
-    public FileMap() {
+
+    @PostConstruct
+    private void init() {
         String root;
         if (path == null) {
-            path = System.getProperty("fizteh.db.dir");
             log.error("root dir not selected");
-            //TODO throw new RuntimeException("root dir not selected");
+            throw new RuntimeException("root dir not selected");
         }
         File r = new File(path);
         if (!r.exists()) {
@@ -36,9 +38,10 @@ public class FileMap extends UserShell {
                 log.error("cannot create root dir " + path);
                 throw new RuntimeException("cannot create root dir " + path);
             }
-            log.info("Root directory created");
+            log.info("Root directory " + path + " created");
 
         }
+        log.info("Root directory " + path + " opened");
         if (path.endsWith(File.separator)) {
             root = path;
         } else {
