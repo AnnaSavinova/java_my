@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>Java2</groupId>
+    <groupId>ru.fizteh.fivt.filemap.students.annasavinova.Java2</groupId>
     <artifactId>Java2</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <modules>
         <module>shell-module</module>
         <module>base-module</module>
@@ -18,6 +18,21 @@
     <properties>
         <spring.version>4.1.0.RELEASE</spring.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>fediq</id>
+            <url>http://nexus.fediq.ru:8080/nexus/content/repositories/releases/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>fediq</id>
+            <url>http://nexus.fediq.ru:8080/nexus/content/repositories/releases/</url>
+
+        </repository>
+    </distributionManagement>
 
     <dependencies>
 
