@@ -43,4 +43,14 @@ body {
     -webkit-border-radius: 4px;
 }
 
+#RemoveAll {
+    clear: both;
+    float: right;
+    background: #00BB3F;
+    border: outset 2px #008500;
+    cursor: pointer;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
 
