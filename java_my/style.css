@@ -1,0 +1,46 @@
+body {
+    margin: auto;
+    color: #A61A00;
+    background: #63DD8D;
+}
+
+#header {
+    margin-top: 10px;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+#InputText {
+    font-size: xx-large;
+}
+
+#list_set {
+    margin-top: 10px;
+    margin-left: 35%;
+    margin-right: 35%;
+    background: #37DD6F;
+}
+
+#las {
+    display: none;
+}
+
+#counter {
+    margin-top: 10px;
+    margin-left: 35%;
+    margin-right: 35%;
+    background: #00BB3F;
+}
+
+.X-button {
+    clear: both;
+    float: right;
+    background: #00BB3F;
+    border: outset 2px #008500;
+    cursor: pointer;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+
