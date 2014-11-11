@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head lang="ru">
+        <meta charset="UTF-8">
+        <title>TODO</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <form class="Forms">
+            <fieldset id="header">
+                <h1 align=center>TODO-LIST</h1>
+                <div id="input">
+                    <input type=text id=InputText placeholder="Input task">
+                </div>
+
+                <div>
+                    <input type="checkbox" id="MarkBox">
+                    <label>Mark all selected</label>
+                </div>
+            </fieldset>
+            <fieldset id="list_set">
+            </fieldset>
+            <fieldset id="counter">
+                <span> 0 items added</span>
+                <input type="button" id="RemoveAll">
+            </fieldset>
+        </form>
+    </body>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js">
+    </script>
+
+    <script type="text/javascript">
+        var count = 0;
+        var count_checked = 0;
+        $(document).ready(function() {
+            $('#InputText').keypress(function(e) {
+                if (e.which == 13) {
+                    var item_text = $('#InputText:text').val();
+                    var item = $('<div class="Item">');
+                    item.append($('<input type="checkbox" class="ItemBox">'));
+                    item.append($('<span contenteditable=true>').text(item_text));
+                    item.append($('<input type="reset" class="X-button" value="X" hidden="true">'));
+                    var list = $('#list_set');
+                    list.append($(item));
+                    ++count;
+                    $('#counter').children(1).text(count + " items added");
+                }
+            });
+
+            $('.Forms').submit(function(e) {
+                return false;
+            });
+
+            $(document).on('change', ".ItemBox", function() {
+                if ($(this).is(':checked')) {
+                    $(this).next().css('text-decoration', 'line-through');
+                    ++count_checked;
+                    if (count_checked == count) {
+                        $('#MarkBox').prop('checked', true);
+                    }
+                } else {
+                    $(this).next().css('text-decoration', 'none');
+                    --count_checked;
+                    if (count_checked != count) {
+                        $('#MarkBox').prop('checked', false);
+                    }
+                }
+            })
+
+            $('#MarkBox').change(function() {
+                if ($(this).is(':checked')) {
+                    $('.ItemBox').prop('checked', true);
+                    $('.ItemBox').next().css('text-decoration', 'line-through');
+                    count_checked = count;
+                } else {
+                    $('.ItemBox').prop('checked', false);
+                    $('.ItemBox').next().css('text-decoration', 'none');
+                    count_checked = 0;
+                }
+            })
+
+            $(document).on('mouseover', '.Item', function() {
+                $($(this).children()[2]).show();
+            })
+
+            $(document).on('mouseout', '.Item', function() {
+                $($(this).children()[2]).hide();
+            })
+
+            $(document).on('click', '.X-button', function() {
+                $($(this).parent()).remove();
+                --count;
+                $('#counter').children(1).text(count + " items added");
+            })
+
+        });
+    </script>
+</html>

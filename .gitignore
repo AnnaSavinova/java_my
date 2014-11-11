@@ -1,0 +1,8 @@
+target/
+tmp/
+*.iml
+.idea
+
+*.jar
+*.class
+*-local.properties
