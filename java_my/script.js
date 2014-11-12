@@ -36,7 +36,7 @@ $(document).ready(function() {
             if (count_checked != count) {
                 $('#MarkBox').prop('checked', false);
             }
-            if (count_checked == 0) {
+            if (count_checked == 0 || count == 0) {
                 $('#RemoveAll').hide();
             }
         }
@@ -47,10 +47,12 @@ $(document).ready(function() {
             $('.ItemBox').prop('checked', true);
             $('.ItemBox').next().css('text-decoration', 'line-through');
             count_checked = count;
+            $('#RemoveAll').show();
         } else {
             $('.ItemBox').prop('checked', false);
             $('.ItemBox').next().css('text-decoration', 'none');
             count_checked = 0;
+            $('#RemoveAll').hide();
         }
     })
 
@@ -65,6 +67,12 @@ $(document).ready(function() {
     $(document).on('click', '.X-button', function() {
         $($(this).parent()).remove();
         --count;
+        if ($($($(this).prev()).prev()).is(':checked')) {
+            --count_checked;
+        }
+        if (count_checked == 0) {
+            $('#RemoveAll').hide();
+        }
         $('#counter').children(1).text(count + " items added");
     })
 
