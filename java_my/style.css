@@ -1,14 +1,14 @@
 body {
     margin: auto;
-    color: #ffffff;
-    background: #cfe1b9;
+    color: #000000;
+   /* background: #cfe1b9;*/
 }
 
 #header {
     margin-top: 10px;
     margin-left: 35%;
     margin-right: 35%;
-    background: #87986a;
+    /*background: #87986a;*/
 }
 
 #InputText {
@@ -19,7 +19,7 @@ body {
     margin-top: 10px;
     margin-left: 35%;
     margin-right: 35%;
-    background: #87986a;
+    /*background: #87986a;*/
 }
 
 #las {
@@ -30,7 +30,7 @@ body {
     margin-top: 10px;
     margin-left: 35%;
     margin-right: 35%;
-    background: #87986a;
+    /*background: #87986a;*/
 }
 
 .X-button {
