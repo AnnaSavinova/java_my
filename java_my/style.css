@@ -1,13 +1,14 @@
 body {
     margin: auto;
-    color: #A61A00;
-    background: #63DD8D;
+    color: #ffffff;
+    background: #cfe1b9;
 }
 
 #header {
     margin-top: 10px;
     margin-left: 35%;
     margin-right: 35%;
+    background: #87986a;
 }
 
 #InputText {
@@ -18,7 +19,7 @@ body {
     margin-top: 10px;
     margin-left: 35%;
     margin-right: 35%;
-    background: #37DD6F;
+    background: #87986a;
 }
 
 #las {
@@ -29,14 +30,14 @@ body {
     margin-top: 10px;
     margin-left: 35%;
     margin-right: 35%;
-    background: #00BB3F;
+    background: #87986a;
 }
 
 .X-button {
     clear: both;
     float: right;
-    background: #00BB3F;
-    border: outset 2px #008500;
+    background: #cfe1b9;
+    border: outset 2px #ffffff;
     cursor: pointer;
     border-radius: 4px;
     -moz-border-radius: 4px;
@@ -46,8 +47,8 @@ body {
 #RemoveAll {
     clear: both;
     float: right;
-    background: #00BB3F;
-    border: outset 2px #008500;
+    background: #cfe1b9;
+    border: outset 2px #ffffff;
     cursor: pointer;
     border-radius: 4px;
     -moz-border-radius: 4px;
